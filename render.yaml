@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: billiard-silk-road-click
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: CLICK_SERVICE_ID
+        value: 100711
+      - key: CLICK_MERCHANT_ID
+        value: 59690
+      - key: CLICK_MERCHANT_USER_ID
+        value: 82314
+      - key: CLICK_SECRET_KEY
+        sync: false
+      - key: BASE_URL
+        sync: false
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ADMIN_CHAT_ID
+        sync: false
+      - key: CLICK_CARD_TYPE
+        value: uzcard
